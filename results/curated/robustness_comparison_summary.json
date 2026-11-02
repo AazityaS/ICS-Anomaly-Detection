@@ -1,0 +1,108 @@
+{
+  "pooled_f1_winners": {
+    "clean": {
+      "WDNN_f1": 0.6504814296057216,
+      "GRU_f1": 0.7383454947938018,
+      "higher_pooled_f1": "GRU"
+    },
+    "low": {
+      "WDNN_f1": 0.6507103839931772,
+      "GRU_f1": 0.7380232281754325,
+      "higher_pooled_f1": "GRU"
+    },
+    "medium": {
+      "WDNN_f1": 0.6523495583332767,
+      "GRU_f1": 0.7453082665650297,
+      "higher_pooled_f1": "GRU"
+    },
+    "high": {
+      "WDNN_f1": 0.6557222495491064,
+      "GRU_f1": 0.7554209773740432,
+      "higher_pooled_f1": "GRU"
+    }
+  },
+  "pooled_f1_series": {
+    "WDNN": [
+      0.6504814296057216,
+      0.6507103839931772,
+      0.6523495583332767,
+      0.6557222495491064
+    ],
+    "GRU": [
+      0.7383454947938018,
+      0.7380232281754325,
+      0.7453082665650297,
+      0.7554209773740432
+    ]
+  },
+  "pooled_fpr_series": {
+    "WDNN": [
+      0.1537739474677668,
+      0.15359709416418107,
+      0.15214485645973697,
+      0.1492267769505729
+    ],
+    "GRU": [
+      0.07629859639695404,
+      0.07644484047491915,
+      0.07212553863734529,
+      0.06623836424298284
+    ]
+  },
+  "sensor_rank_stability": {
+    "WDNN": {
+      "clean": 1.0,
+      "low": 1.0,
+      "medium": 1.0,
+      "high": 1.0
+    },
+    "GRU": {
+      "clean": 1.0,
+      "low": 1.0,
+      "medium": 1.0,
+      "high": 1.0
+    }
+  },
+  "explanation_comparison": {
+    "clean": {
+      "wdnn_detected_section_episodes": 637,
+      "gru_detected_section_episodes": 469,
+      "matched_detected_section_episodes": 148,
+      "wdnn_only_detected_episodes": 489,
+      "gru_only_detected_episodes": 321,
+      "rank_one_sensor_match_rate_on_matched_episodes": 0.9662162162162162,
+      "mean_top_five_jaccard_on_matched_episodes": 0.7821750321750321,
+      "mean_contribution_delta_gru_minus_wdnn_on_matched_sensor_episode_pairs": 0.15786665190810273
+    },
+    "low": {
+      "wdnn_detected_section_episodes": 635,
+      "gru_detected_section_episodes": 471,
+      "matched_detected_section_episodes": 149,
+      "wdnn_only_detected_episodes": 486,
+      "gru_only_detected_episodes": 322,
+      "rank_one_sensor_match_rate_on_matched_episodes": 0.9664429530201343,
+      "mean_top_five_jaccard_on_matched_episodes": 0.7718120805369127,
+      "mean_contribution_delta_gru_minus_wdnn_on_matched_sensor_episode_pairs": 0.1696785312278744
+    },
+    "medium": {
+      "wdnn_detected_section_episodes": 638,
+      "gru_detected_section_episodes": 461,
+      "matched_detected_section_episodes": 146,
+      "wdnn_only_detected_episodes": 492,
+      "gru_only_detected_episodes": 315,
+      "rank_one_sensor_match_rate_on_matched_episodes": 0.9794520547945206,
+      "mean_top_five_jaccard_on_matched_episodes": 0.7808219178082192,
+      "mean_contribution_delta_gru_minus_wdnn_on_matched_sensor_episode_pairs": 0.12133045198439188
+    },
+    "high": {
+      "wdnn_detected_section_episodes": 670,
+      "gru_detected_section_episodes": 436,
+      "matched_detected_section_episodes": 141,
+      "wdnn_only_detected_episodes": 529,
+      "gru_only_detected_episodes": 295,
+      "rank_one_sensor_match_rate_on_matched_episodes": 0.9787234042553191,
+      "mean_top_five_jaccard_on_matched_episodes": 0.7964370145221208,
+      "mean_contribution_delta_gru_minus_wdnn_on_matched_sensor_episode_pairs": 0.11046632896660646
+    }
+  }
+}

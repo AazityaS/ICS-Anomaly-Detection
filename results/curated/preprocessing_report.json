@@ -1,0 +1,71 @@
+{
+    "normal.csv": {
+        "input_file": "normal.csv",
+        "output_file": "data\\processed\\normal_clean.csv",
+        "original_rows": 1387098,
+        "final_rows": 892098,
+        "rows_removed": 495000,
+        "exact_duplicates_removed": 495000,
+        "excluded_columns": [
+            "MV101",
+            "AIT201",
+            "MV201",
+            "P201",
+            "P202",
+            "P204",
+            "MV303"
+        ],
+        "remaining_columns": 46,
+        "remaining_missing_values": {},
+        "duplicate_timestamps": 0,
+        "chronologically_sorted": true,
+        "timestamp_min": "2015-12-22 16:00:00",
+        "timestamp_max": "2016-01-02 14:59:59"
+    },
+    "attack.csv": {
+        "input_file": "attack.csv",
+        "output_file": "data\\processed\\attack_clean.csv",
+        "original_rows": 54621,
+        "final_rows": 54621,
+        "rows_removed": 0,
+        "exact_duplicates_removed": 0,
+        "excluded_columns": [
+            "MV101",
+            "AIT201",
+            "MV201",
+            "P201",
+            "P202",
+            "P204",
+            "MV303"
+        ],
+        "remaining_columns": 46,
+        "remaining_missing_values": {},
+        "duplicate_timestamps": 0,
+        "chronologically_sorted": true,
+        "timestamp_min": "2015-12-28 10:29:14",
+        "timestamp_max": "2016-01-02 13:41:11"
+    },
+    "merged.csv": {
+        "input_file": "merged.csv",
+        "output_file": "data\\processed\\merged_clean.csv",
+        "original_rows": 1441719,
+        "final_rows": 946719,
+        "rows_removed": 495000,
+        "exact_duplicates_removed": 495000,
+        "excluded_columns": [
+            "MV101",
+            "AIT201",
+            "MV201",
+            "P201",
+            "P202",
+            "P204",
+            "MV303"
+        ],
+        "remaining_columns": 46,
+        "remaining_missing_values": {},
+        "duplicate_timestamps": 0,
+        "chronologically_sorted": true,
+        "timestamp_min": "2015-12-22 16:00:00",
+        "timestamp_max": "2016-01-02 14:59:59"
+    }
+}

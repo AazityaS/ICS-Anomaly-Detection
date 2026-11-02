@@ -1,0 +1,19 @@
+{
+  "selected_wdnn_epoch": 100,
+  "selected_wdnn_val_loss": 0.013085884941785409,
+  "best_logged_wdnn_epoch": 90,
+  "best_logged_wdnn_val_loss": 0.011930924131818456,
+  "best_epoch_weights_available": false,
+  "selection_note": "Epoch 100 is the only saved WDNN state; epoch-90 weights were not retained.",
+  "ttnn_target_assumption": "next_mse_forecasting",
+  "ttnn_training_source": "normal validation only",
+  "t_base": 0.028766494244337082,
+  "t_sections": [
+    0.041962187737226486,
+    0.044336818158626556,
+    0.03325860574841499
+  ],
+  "threshold_rule": "T_g = T_base + max(TTNN predictions from historical MSE windows)",
+  "historical_alignment": "Algorithm 1: t0 = current_start - H - Win; batch size s=32",
+  "test_data_evaluated": false
+}

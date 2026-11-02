@@ -1,0 +1,332 @@
+{
+  "evaluation": "original DAICS baseline point evaluation",
+  "device": "cuda",
+  "wdnn_checkpoint_epoch": 100,
+  "wdnn_checkpoint_val_loss": 0.013085884941785409,
+  "wdnn_best_logged_epoch": 90,
+  "wdnn_best_logged_val_loss": 0.011930924131818456,
+  "wdnn_best_epoch_weights_available": false,
+  "ttnn_checkpoint_epoch": 1,
+  "ttnn_target_assumption": "next_mse_forecasting",
+  "thresholds": {
+    "t_base": 0.028766494244337082,
+    "t_sections_validation_summary": [
+      0.041962187737226486,
+      0.044336818158626556,
+      0.03325860574841499
+    ],
+    "dynamic_rule": "T_g = T_base + max(TTNN predictions from historical MSE windows)"
+  },
+  "protocol": {
+    "normal_and_attack_evaluated_independently": true,
+    "test_loader_shuffle": false,
+    "test_labels_used_for_decisions": false,
+    "normal_validation_calendar_overlaps_attack_source": true,
+    "point_label_rule": "window label is attack if any of its Wout output samples is attack",
+    "attack_level_delay_note": "Attack-source labels are represented as contiguous labeled intervals; this is not a verified per-attack 36-event timeline."
+  },
+  "sources": {
+    "normal_test": {
+      "rows": 294142,
+      "windows": 294029,
+      "timestamp_start": "2015-12-29T16:01:50.000000",
+      "timestamp_end": "2016-02-01T14:59:56.000000",
+      "label_distribution": {
+        "0": 294029
+      },
+      "overall": {
+        "accuracy": 0.8462260525322333,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.1537739474677668,
+        "confusion_matrix": {
+          "tn": 248815,
+          "fp": 45214,
+          "fn": 0,
+          "tp": 0
+        },
+        "detection_delay_seconds": null,
+        "attacks_detected": 0,
+        "attack_intervals_in_labels": 0,
+        "attack_interval_details": []
+      },
+      "sensor_sections": {
+        "section_1": {
+          "accuracy": 0.9024279917967275,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_positive_rate": 0.09757200820327247,
+          "confusion_matrix": {
+            "tn": 265340,
+            "fp": 28689,
+            "fn": 0,
+            "tp": 0
+          },
+          "detection_delay_seconds": null,
+          "attacks_detected": 0,
+          "attack_intervals_in_labels": 0,
+          "attack_interval_details": []
+        },
+        "section_2": {
+          "accuracy": 0.9304864486156127,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_positive_rate": 0.06951355138438725,
+          "confusion_matrix": {
+            "tn": 273590,
+            "fp": 20439,
+            "fn": 0,
+            "tp": 0
+          },
+          "detection_delay_seconds": null,
+          "attacks_detected": 0,
+          "attack_intervals_in_labels": 0,
+          "attack_interval_details": []
+        },
+        "section_3": {
+          "accuracy": 0.9839131514238392,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "false_positive_rate": 0.016086848576160856,
+          "confusion_matrix": {
+            "tn": 289299,
+            "fp": 4730,
+            "fn": 0,
+            "tp": 0
+          },
+          "detection_delay_seconds": null,
+          "attacks_detected": 0,
+          "attack_intervals_in_labels": 0,
+          "attack_interval_details": []
+        }
+      },
+      "actuator_anomaly_windows": 277
+    },
+    "attack_test": {
+      "rows": 54621,
+      "windows": 54508,
+      "timestamp_start": "2015-12-28T10:31:04.000000",
+      "timestamp_end": "2016-02-01T13:41:08.000000",
+      "label_distribution": {
+        "1": 54508
+      },
+      "overall": {
+        "accuracy": 0.8818338592500183,
+        "precision": 1.0,
+        "recall": 0.8818338592500183,
+        "f1": 0.9372069217645626,
+        "false_positive_rate": 0.0,
+        "confusion_matrix": {
+          "tn": 0,
+          "fp": 0,
+          "fn": 6441,
+          "tp": 48067
+        },
+        "detection_delay_seconds": 0.0,
+        "attacks_detected": 1,
+        "attack_intervals_in_labels": 1,
+        "attack_interval_details": [
+          {
+            "attack_start": 0,
+            "attack_end": 54507,
+            "duration_samples": 54508,
+            "delay_samples": 0.0,
+            "delay_seconds": 0.0,
+            "detected": true
+          }
+        ]
+      },
+      "sensor_sections": {
+        "section_1": {
+          "accuracy": 0.7290122550818229,
+          "precision": 1.0,
+          "recall": 0.7290122550818229,
+          "f1": 0.8432702000106107,
+          "false_positive_rate": 0.0,
+          "confusion_matrix": {
+            "tn": 0,
+            "fp": 0,
+            "fn": 14771,
+            "tp": 39737
+          },
+          "detection_delay_seconds": 0.0,
+          "attacks_detected": 1,
+          "attack_intervals_in_labels": 1,
+          "attack_interval_details": [
+            {
+              "attack_start": 0,
+              "attack_end": 54507,
+              "duration_samples": 54508,
+              "delay_samples": 0.0,
+              "delay_seconds": 0.0,
+              "detected": true
+            }
+          ]
+        },
+        "section_2": {
+          "accuracy": 0.7641814045644676,
+          "precision": 1.0,
+          "recall": 0.7641814045644676,
+          "f1": 0.8663297352384518,
+          "false_positive_rate": 0.0,
+          "confusion_matrix": {
+            "tn": 0,
+            "fp": 0,
+            "fn": 12854,
+            "tp": 41654
+          },
+          "detection_delay_seconds": 897.0,
+          "attacks_detected": 1,
+          "attack_intervals_in_labels": 1,
+          "attack_interval_details": [
+            {
+              "attack_start": 0,
+              "attack_end": 54507,
+              "duration_samples": 54508,
+              "delay_samples": 897.0,
+              "delay_seconds": 897.0,
+              "detected": true
+            }
+          ]
+        },
+        "section_3": {
+          "accuracy": 0.6518309239010788,
+          "precision": 1.0,
+          "recall": 0.6518309239010788,
+          "f1": 0.7892223283502522,
+          "false_positive_rate": 0.0,
+          "confusion_matrix": {
+            "tn": 0,
+            "fp": 0,
+            "fn": 18978,
+            "tp": 35530
+          },
+          "detection_delay_seconds": 918.0,
+          "attacks_detected": 1,
+          "attack_intervals_in_labels": 1,
+          "attack_interval_details": [
+            {
+              "attack_start": 0,
+              "attack_end": 54507,
+              "duration_samples": 54508,
+              "delay_samples": 918.0,
+              "delay_seconds": 918.0,
+              "detected": true
+            }
+          ]
+        }
+      },
+      "actuator_anomaly_windows": 36525
+    }
+  },
+  "pooled_point_metrics": {
+    "accuracy": 0.851794787927824,
+    "precision": 0.5152925032964912,
+    "recall": 0.8818338592500183,
+    "f1": 0.6504814296057216,
+    "false_positive_rate": 0.1537739474677668,
+    "confusion_matrix": {
+      "tn": 248815,
+      "fp": 45214,
+      "fn": 6441,
+      "tp": 48067
+    },
+    "detection_delay_seconds": 0.0,
+    "attacks_detected": 1,
+    "attack_intervals_in_labels": 1,
+    "attack_interval_details": [
+      {
+        "attack_start": 0,
+        "attack_end": 54507,
+        "duration_samples": 54508,
+        "delay_samples": 0.0,
+        "delay_seconds": 0.0,
+        "detected": true
+      }
+    ]
+  },
+  "pooled_sensor_sections": {
+    "section_1": {
+      "accuracy": 0.875307356177393,
+      "precision": 0.5807295472481221,
+      "recall": 0.7290122550818229,
+      "f1": 0.6464769713830185,
+      "false_positive_rate": 0.09757200820327247,
+      "confusion_matrix": {
+        "tn": 265340,
+        "fp": 28689,
+        "fn": 14771,
+        "tp": 39737
+      },
+      "detection_delay_seconds": 0.0,
+      "attacks_detected": 1,
+      "attack_intervals_in_labels": 1,
+      "attack_interval_details": [
+        {
+          "attack_start": 0,
+          "attack_end": 54507,
+          "duration_samples": 54508,
+          "delay_samples": 0.0,
+          "delay_seconds": 0.0,
+          "detected": true
+        }
+      ]
+    },
+    "section_2": {
+      "accuracy": 0.9044778603132523,
+      "precision": 0.6708324609859404,
+      "recall": 0.7641814045644676,
+      "f1": 0.7144707163746452,
+      "false_positive_rate": 0.06951355138438725,
+      "confusion_matrix": {
+        "tn": 273590,
+        "fp": 20439,
+        "fn": 12854,
+        "tp": 41654
+      },
+      "detection_delay_seconds": 897.0,
+      "attacks_detected": 1,
+      "attack_intervals_in_labels": 1,
+      "attack_interval_details": [
+        {
+          "attack_start": 0,
+          "attack_end": 54507,
+          "duration_samples": 54508,
+          "delay_samples": 897.0,
+          "delay_seconds": 897.0,
+          "detected": true
+        }
+      ]
+    },
+    "section_3": {
+      "accuracy": 0.9319785273873362,
+      "precision": 0.8825136612021858,
+      "recall": 0.6518309239010788,
+      "f1": 0.7498311666385279,
+      "false_positive_rate": 0.016086848576160856,
+      "confusion_matrix": {
+        "tn": 289299,
+        "fp": 4730,
+        "fn": 18978,
+        "tp": 35530
+      },
+      "detection_delay_seconds": 918.0,
+      "attacks_detected": 1,
+      "attack_intervals_in_labels": 1,
+      "attack_interval_details": [
+        {
+          "attack_start": 0,
+          "attack_end": 54507,
+          "duration_samples": 54508,
+          "delay_samples": 918.0,
+          "delay_seconds": 918.0,
+          "detected": true
+        }
+      ]
+    }
+  }
+}

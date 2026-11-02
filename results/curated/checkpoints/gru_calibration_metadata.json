@@ -1,0 +1,57 @@
+{
+  "model_checkpoint": "checkpoints\\gru\\best_checkpoint.pt",
+  "model_checkpoint_epoch": 12,
+  "training_rows": 478365,
+  "benign_validation_rows": 119591,
+  "validation_loader_shuffle": false,
+  "validation_mse_samples_per_section": [
+    119478,
+    119478,
+    119478
+  ],
+  "validation_mse_summary_per_section": [
+    {
+      "mean": 0.0033788080896839457,
+      "std": 0.029378406351278454,
+      "min": 5.652142135659233e-06,
+      "max": 1.755472183227539
+    },
+    {
+      "mean": 0.0058010070493853035,
+      "std": 0.0318283875414008,
+      "min": 1.4292734704213217e-05,
+      "max": 0.591908872127533
+    },
+    {
+      "mean": 0.000980917602511861,
+      "std": 0.00821822924128299,
+      "min": 5.624359801004175e-06,
+      "max": 0.2651330232620239
+    }
+  ],
+  "ttnn_training_target": "next_mse_regression_approximation",
+  "ttnn_training_source": "GRU prediction errors on benign validation only",
+  "ttnn_config": {
+    "epochs": 1,
+    "learning_rate": 0.01,
+    "batch_size": 32,
+    "cl1_kernels": 2,
+    "cl1_kernel_size": 2,
+    "mp1_pool_size": 2,
+    "cl2_kernels": 4,
+    "cl2_kernel_size": 2,
+    "mp2_pool_size": 4,
+    "dense_outputs": 1,
+    "median_filter_size": 59,
+    "leaky_relu_alpha": 0.01
+  },
+  "t_base": 0.028916586683509857,
+  "section_thresholds_from_validation_summary": [
+    0.06619749963283539,
+    0.10941962897777557,
+    0.03929357975721359
+  ],
+  "dynamic_threshold_rule": "T_g = GRU T_base + max(GRU-specific TTNN prediction on historical MSE windows)",
+  "calibration_seed": 20261102,
+  "test_data_or_labels_used_for_calibration": false
+}

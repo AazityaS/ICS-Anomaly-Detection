@@ -1,0 +1,38 @@
+{
+  "note": "Curated copies of saved artifacts. No training, calibration, or evaluation was run while preparing this bundle.",
+  "wdnn_evaluation": {
+    "checkpoint_source": "models/wdnn_checkpoint.pt",
+    "checkpoint_epoch": 100,
+    "used_by": "evaluate_baseline.py, evaluate_robustness.py",
+    "ttnn_source": "models/ttnn_checkpoint.pt",
+    "ttnn_epoch": 1,
+    "threshold_source": "models/thresholds.joblib",
+    "normalizer_source": "models/norm_params.joblib",
+    "actuator_database_source": "data/processed/actuator_db.joblib",
+    "limitation": "Epoch 90 has the best logged validation loss, but its weights were not saved; evaluation uses epoch 100."
+  },
+  "gru_evaluation": {
+    "checkpoint_source": "checkpoints/gru/best_checkpoint.pt",
+    "checkpoint_epoch": 12,
+    "used_by": "evaluate_gru.py, evaluate_gru_robustness.py, explain_gru.py",
+    "ttnn_source": "checkpoints/gru/ttnn_checkpoint.pt",
+    "ttnn_epoch": 1,
+    "threshold_source": "checkpoints/gru/thresholds.joblib",
+    "calibration_metadata_source": "checkpoints/gru/calibration_metadata.json",
+    "limitation": "TTNN next-MSE target is an implementation approximation; evaluate_gru.py calibrates using benign validation prediction errors."
+  },
+  "excluded_uncertain_or_unused": [
+    {
+      "path": "models/wdnn.pth",
+      "reason": "State-dict-only file; the reported evaluation entry point loads models/wdnn_checkpoint.pt instead. Hash differs; not assumed interchangeable."
+    },
+    {
+      "path": "models/ttnn.pth",
+      "reason": "State-dict-only file; the reported evaluation entry point loads models/ttnn_checkpoint.pt instead. Hash differs; not assumed interchangeable."
+    },
+    {
+      "path": "checkpoints/gru/smoke/",
+      "reason": "Smoke-test artifacts, not the full-training best checkpoint."
+    }
+  ]
+}
